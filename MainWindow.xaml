@@ -32,7 +32,7 @@
 
         </Grid>
 
-        <TextBlock HorizontalAlignment="Stretch" Grid.Row="1"/>
+        <TextBlock VerticalAlignment="Top" Grid.Row="1" Text="{Binding Output}" FontSize="34" TextAlignment="Right" Margin="0,76,0,0" />
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Grid.Row="2">
             <Button Content="MC"/>

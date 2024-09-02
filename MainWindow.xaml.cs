@@ -20,9 +20,13 @@ namespace Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string Output { get; set; }
         public MainWindow()
         {
             InitializeComponent();
+
+            Output = "Test text, please ignore";
+            DataContext = this;
         }
     }
 }
