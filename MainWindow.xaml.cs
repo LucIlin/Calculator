@@ -46,7 +46,85 @@ namespace Calculator
 
         private void ComputationButtonsClicked(object sender, RoutedEventArgs e)
         {
+            if (sender is Button button)
+            {
+                switch (button.Name)
+                {
+                    case "Percent":
 
+                        break;
+                    case "Fraction":
+
+                        break;
+                    case "Seven":
+
+                        break;
+                    case "Four":
+
+                        break;
+                    case "One":
+
+                        break;
+                    case "Negate":
+
+                        break;
+                    case "ClearEntry":
+
+                        break;
+                    case "Square":
+
+                        break;
+                    case "Eight":
+
+                        break;
+                    case "Five":
+
+                        break;
+                    case "Two":
+
+                        break;
+                    case "Zero":
+
+                        break;
+                    case "Clear":
+
+                        break;
+                    case "Radical":
+
+                        break;
+                    case "Nine":
+
+                        break;
+                    case "Six":
+
+                        break;
+                    case "Three":
+
+                        break;
+                    case "Comma":
+
+                        break;
+                    case "Delete":
+
+                        break;
+                    case "Divide":
+
+                        break;
+                    case "Multiply":
+
+                        break;
+                    case "Subtract":
+
+                        break;
+                    case "Add":
+
+                        break;
+                    case "Equals":
+
+                        break;
+
+                }
+            }
         }
     }
 }
