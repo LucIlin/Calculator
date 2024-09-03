@@ -20,13 +20,33 @@ namespace Calculator
     /// </summary>
     public partial class MainWindow : Window
     {
-        public string Output { get; set; }
         public MainWindow()
         {
             InitializeComponent();
 
-            Output = "Test text, please ignore";
-            DataContext = this;
+            BufferDisplay = "Test text, please ignore( * + - )";
+            MainDisplay = 0m;
+
+            this.DataContext = this;
+        }
+
+        private string _bufferDisplay;
+        public string BufferDisplay
+        {
+            get { return _bufferDisplay; }
+            set { _bufferDisplay = value; }
+        }
+
+        private decimal _mainDisplay;
+        public decimal MainDisplay
+        {
+            get { return _mainDisplay; }
+            set { _mainDisplay = value; }
+        }
+
+        private void ComputationButtonsClicked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

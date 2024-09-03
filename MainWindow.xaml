@@ -8,6 +8,10 @@
         Title="Calculator" Height="515" Width="340"
         Topmost="True"
 >
+    <Window.DataContext>
+        <local:MainWindow/>
+    </Window.DataContext>
+    
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="LightBlue"/>
@@ -32,7 +36,14 @@
 
         </Grid>
 
-        <TextBlock VerticalAlignment="Top" Grid.Row="1" Text="{Binding Output}" FontSize="34" TextAlignment="Right" Margin="0,76,0,0" />
+        <Canvas Grid.Row="1">
+
+            <TextBlock Text="{Binding BufferDisplay}" FontSize="20" Canvas.Right="10" Canvas.Bottom="70"/>
+
+            <TextBlock Text="{Binding MainDisplay}" FontSize="45" Canvas.Right="10" Canvas.Bottom="10" />
+
+        </Canvas>
+
 
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Grid.Row="2">
             <Button Content="MC"/>
@@ -61,35 +72,35 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
 
-            <Button Grid.Column="0" Grid.Row="0" Content="%"/>
-            <Button Grid.Column="0" Grid.Row="1" Content="1/x" FontStyle="Italic"/>
-            <Button Grid.Column="0" Grid.Row="2" Content="7"/>
-            <Button Grid.Column="0" Grid.Row="3" Content="4"/>
-            <Button Grid.Column="0" Grid.Row="4" Content="1"/>
-            <Button Grid.Column="0" Grid.Row="5" Content="±"/>
-            <Button Grid.Column="1" Grid.Row="0" Content="CE"/>
-            <Button Grid.Column="1" Grid.Row="1">
+            <Button Name="Percent" Grid.Column="0" Grid.Row="0" Content="%" Click="ComputationButtonsClicked"/>
+            <Button Name="Fraction" Grid.Column="0" Grid.Row="1" Content="1/x" FontStyle="Italic" Click="ComputationButtonsClicked"/>
+            <Button Name="Seven" Grid.Column="0" Grid.Row="2" Content="7" Click="ComputationButtonsClicked"/>
+            <Button Name="Four" Grid.Column="0" Grid.Row="3" Content="4" Click="ComputationButtonsClicked"/>
+            <Button Name="One" Grid.Column="0" Grid.Row="4" Content="1" Click="ComputationButtonsClicked"/>
+            <Button Name="Negate" Grid.Column="0" Grid.Row="5" Content="±" Click="ComputationButtonsClicked"/>
+            <Button Name="ClearEntry" Grid.Column="1" Grid.Row="0" Content="CE" Click="ComputationButtonsClicked"/>
+            <Button Name="Square" Grid.Column="1" Grid.Row="1" Click="ComputationButtonsClicked">
                 <TextBlock FontStyle="Italic">
                 <Run Text="x"/>
-                <Run Text="2" BaselineAlignment="Superscript" FontSize="8" />
+                <Run Text="2" BaselineAlignment="Superscript" FontSize="9" />
                 </TextBlock>
             </Button>
-            <Button Grid.Column="1" Grid.Row="2" Content="8"/>
-            <Button Grid.Column="1" Grid.Row="3" Content="4"/>
-            <Button Grid.Column="1" Grid.Row="4" Content="2"/>
-            <Button Grid.Column="1" Grid.Row="5" Content="0"/>
-            <Button Grid.Column="2" Grid.Row="0" Content="Backspace"/>
-            <Button Grid.Column="2" Grid.Row="1" Content="√x" FontStyle="Italic"/>
-            <Button Grid.Column="2" Grid.Row="2" Content="9"/>
-            <Button Grid.Column="2" Grid.Row="3" Content="6"/>
-            <Button Grid.Column="2" Grid.Row="4" Content="3"/>
-            <Button Grid.Column="2" Grid.Row="5" Content=","/>
-            <Button Grid.Column="3" Grid.Row="0" Content="⌫"/>
-            <Button Grid.Column="3" Grid.Row="1" Content="÷"/>
-            <Button Grid.Column="3" Grid.Row="2" Content="×"/>
-            <Button Grid.Column="3" Grid.Row="3" Content="-"/>
-            <Button Grid.Column="3" Grid.Row="4" Content="+"/>
-            <Button Grid.Column="3" Grid.Row="5" Content="="/>
+            <Button Name="Eight" Grid.Column="1" Grid.Row="2" Content="8" Click="ComputationButtonsClicked"/>
+            <Button Name="Five" Grid.Column="1" Grid.Row="3" Content="5" Click="ComputationButtonsClicked"/>
+            <Button Name="Two" Grid.Column="1" Grid.Row="4" Content="2" Click="ComputationButtonsClicked"/>
+            <Button Name="Zero" Grid.Column="1" Grid.Row="5" Content="0" Click="ComputationButtonsClicked"/>
+            <Button Name="Clear" Grid.Column="2" Grid.Row="0" Content="C" Click="ComputationButtonsClicked"/>
+            <Button Name="Radical" Grid.Column="2" Grid.Row="1" Content="√x" FontStyle="Italic" Click="ComputationButtonsClicked"/>
+            <Button Name="Nine" Grid.Column="2" Grid.Row="2" Content="9" Click="ComputationButtonsClicked"/>
+            <Button Name="Six" Grid.Column="2" Grid.Row="3" Content="6" Click="ComputationButtonsClicked"/>
+            <Button Name="Three" Grid.Column="2" Grid.Row="4" Content="3" Click="ComputationButtonsClicked"/>
+            <Button Name="Comma" Grid.Column="2" Grid.Row="5" Content="," Click="ComputationButtonsClicked"/>
+            <Button Name="Delete" Grid.Column="3" Grid.Row="0" Content="⌫" Click="ComputationButtonsClicked"/>
+            <Button Name="Divide" Grid.Column="3" Grid.Row="1" Content="÷" Click="ComputationButtonsClicked"/>
+            <Button Name="Multiply" Grid.Column="3" Grid.Row="2" Content="×" Click="ComputationButtonsClicked"/>
+            <Button Name="Subtract" Grid.Column="3" Grid.Row="3" Content="-" Click="ComputationButtonsClicked"/>
+            <Button Name="Add" Grid.Column="3" Grid.Row="4" Content="+" Click="ComputationButtonsClicked"/>
+            <Button Name="Equals" Grid.Column="3" Grid.Row="5" Content="=" Click="ComputationButtonsClicked"/>
 
         </Grid>
     </Grid>
